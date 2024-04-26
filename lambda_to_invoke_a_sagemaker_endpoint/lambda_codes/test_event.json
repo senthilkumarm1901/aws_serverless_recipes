@@ -1,0 +1,14 @@
+{
+    "data": {
+        "inputs":  "What is Deep Learning?",
+        "parameters": {
+          "do_sample": true,
+          "top_p": 0.6,
+          "temperature": 0.9,
+          "top_k": 50,
+          "max_new_tokens": 700,
+          "repetition_penalty": 1.03,
+          "stop": ["</s>"]
+        }
+    }
+}
