@@ -1,4 +1,6 @@
-# The Overal Architecture we are building here
+# Overall Architecture
+## How to Deploy a LLM Endpoint (like Mistral 7B) in SageMaker and invoke scalably via Lambda
+
 ![](./docs/images/workflow.png)
 
 Tools Used:
