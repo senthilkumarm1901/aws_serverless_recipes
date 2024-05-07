@@ -114,11 +114,15 @@ NEW_TAG_NAME="7May_3"
 --function-name ${FUNCTION_NAME} \
 --ephemeral-storage Size=${EPHEMERAL_STORAGE}
 
+% aws lambda update-function-configuration \
+--function-name ${FUNCTION_NAME} \
+--memory-size 10240
+
 # invoke the test_event.json and out the response
 % aws lambda invoke \
 --function-name "${FUNCTION_NAME}" \
 --invocation-type 'RequestResponse' \
---payload file://test_event.json output_aws.json \
+--payload file://test_event_manual.json output_aws.json \
 && cat output_aws.json | jq > formatted_output_aws.json && rm output_aws.json
 
 % jp -f formatted_output_aws.json -u 'body' | jq .
@@ -135,8 +139,91 @@ NEW_TAG_NAME="7May_3"
 
 ## 3. Create API Gateway with above Lambda as the backend
 
-`TO_BE_DONE`
+### Create the IAM Policy for API GW
+```
+APIGW_IAM_POLICY_JSON=apigw_iam_policy.json
+APIGW_POLICY_NAME=API_GW_POLICY_TO_INVOKE_LAMDA
+
+aws iam create-policy --policy-name $APIGW_POLICY_NAME --policy-document file://${APIGW_IAM_POLICY_JSON}
+```
+
+### Create the IAM Role for API GW
+
+```bash
+APIGW_ROLE_NAME=API_GW_ROLE_TO_INVOKE_LAMBDA
+APIGW_TRUST_POLICY_JSON=apigw_trust_policy.json
+
+aws iam create-role --role-name $APIGW_ROLE_NAME --assume-role-policy-document file://${APIGW_TRUST_POLICY_JSON}
+
+
+aws iam attach-role-policy --role-name $APIGW_ROLE_NAME --policy-arn "arn:aws:iam::${AWS_ACCOUNT_ID}:policy/${APIGW_POLICY_NAME}"
+
+APIGW_ROLE_ARN=$(aws iam get-role --role-name $APIGW_ROLE_NAME --query "Role.Arn" --output text)
+```
+
+### create a REST API
+```bash
+API_NAME=REST_API_FOR_SERVERLESS_LLMS
+REST_API_ID=$(aws apigateway create-rest-api --name $API_NAME --region ${REGION} --endpoint-configuration types=REGIONAL --query 'id' --output text) 
+```
+
+
+### modify REST API via OpenAPI config (ensure to modify the account_id, lambda_function name and other details)
+
+```bash
+sed -e "s|\${REST_API_ID\}|${REST_API_ID}|g" -e "s|\${REGION}|${REGION}|g" -e "s|\${FUNCTION_NAME}|${FUNCTION_NAME}|g" -e "s|\${AWS_ACCOUNT_ID}|${AWS_ACCOUNT_ID}|g" lambda_openapi_spec_template.yml > lambda_openapi_spec.yml
+
+aws apigateway put-rest-api --rest-api-id $REST_API_ID --body file://lambda_openapi_spec.yml --mode merge
+```
+
+### Add the Lambda Permission using `put-integration`
+
+```bash
+API_GW_URI="arn:aws:apigateway:${REGION}:lambda:path/2015-03-31/functions/arn:aws:lambda:${REGION}:${AWS_ACCOUNT_ID}:function:${FUNCTION_NAME}/invocations"
+
+RESOURCE_ID=$(aws apigateway get-resources \
+    --rest-api-id $REST_API_ID \
+    --query "items[?path=='/${FUNCTION_NAME}'].id" \
+    --output text \
+    --region ${REGION})
+
+aws apigateway put-integration \
+        --region ${REGION} \
+        --rest-api-id $REST_API_ID \
+        --resource-id ${RESOURCE_ID} \
+        --http-method ANY \
+        --type AWS_PROXY \
+        --integration-http-method ANY \
+        --uri $API_GW_URI \
+        --credentials $APIGW_ROLE_ARN
+
+aws apigateway put-integration-response --region ${REGION} --rest-api-id $REST_API_ID --resource-id $RESOURCE_ID --http-method ANY --status-code 200
+
+
+STAGE_NAME="v1"
+
+aws apigateway create-deployment --rest-api-id ${REST_API_ID} --stage-name ${STAGE_NAME}
+
+```
+
 
 ## 4. Invoke the API Gateway
 
-`TO_BE_DONE`
+```bash
+% API_GW_URL=https://${REST_API_ID}.execute-api.${REGION}.amazonaws.com/v1/${FUNCTION_NAME}
+
+
+% curl -X POST -H "Content-Type: application/json" -d @test_event.json $API_GW_URL > output_via_apigw.json
+
+% cat output_via_apigw.json | jq .
+
+{
+  "input_event": {
+    "text_to_be_masked": "Hello, my name is Senthil Kumar and I live in Chennai. I work as a software engineer at XYZ. my email id is senthil_kumar@gmail.com. I need to avail refund for a purchase in your site made from the credit card number 5555555555554444. Reach me at mobile +91 9876541230"
+  },
+  "annonymized_output": "Hello, my name is <FIRSTNAME> <LASTNAME> and I live in <CITY> I work as a software engineer at XYZ. my email id is <EMAIL> I need to avail refund for a purchase in your site made from the credit card number <CREDITCARDNUMBER> Reach me at mobile <PHONENUMBER>"
+}
+```
+
+Limitations with API Gateway: 
+- We need to ensure the result is processed within < 30 seconds. If result takes more than 30 seconds, it is better to output the result to s3 and fetch from s3
