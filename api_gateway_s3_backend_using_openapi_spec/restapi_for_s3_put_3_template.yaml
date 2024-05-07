@@ -1,0 +1,49 @@
+openapi: "3.0.1"
+info:
+  title: "REST_API_FOR_SERVERLESS_LLMS"
+  version: "openapi_specs"
+paths:
+  /{bucket}/{filename}:
+    put:
+      parameters:
+      - name: "filename"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      - name: "bucket"
+        in: "path"
+        required: true
+        schema:
+          type: "string"
+      responses:
+        "200":
+          description: "200 response"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Empty"
+      x-amazon-apigateway-integration:
+        type: "aws"
+        credentials: "${APIGW_ROLE_ARN}"
+        httpMethod: "PUT"
+        uri: "arn:aws:apigateway:${REGION}:s3:path/{bucket}/{filename}"
+        responses:
+          default:
+            statusCode: "200"
+        requestParameters:
+          integration.request.path.filename: "method.request.path.filename"
+          integration.request.path.bucket: "method.request.path.bucket"
+        passthroughBehavior: "when_no_match"
+components:
+  schemas:
+    Empty:
+      title: "Empty Schema"
+      type: "object"
+x-amazon-apigateway-binary-media-types:
+- "*/*"
+- "/*/*"
+# x-amazon-apigateway-api-key-source: REGIONAL
+x-amazon-apigateway-endpoint-configuration: REGIONAL
+#   types:
+#     - REGIONAL
