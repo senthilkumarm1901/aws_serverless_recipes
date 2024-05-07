@@ -106,6 +106,11 @@ class TransformerRecognizer(EntityRecognizer):
 
 def lambda_handler(event, context):
     # This function will be triggered when the Lambda is invoked
+    print(event)
+    try:
+        event = json.loads(event["body"])
+    except:
+        event = event["body"]
     text = event["text_to_be_masked"]
     # transformer_res = nlp(text)
 
