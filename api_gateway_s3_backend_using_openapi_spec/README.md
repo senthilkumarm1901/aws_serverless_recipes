@@ -59,7 +59,7 @@ REST_API_ID=$(aws apigateway create-rest-api --name $API_NAME --region ${your_re
 
 `REST_API_ID=<your-rest-api-id>`
 
-# aws apigateway import-rest-api --body file://openapi_configs/restapi_for_S3_put_3.yaml`
+### Modify the OpenAPI sec and attach the s3 bucket to API Gateway
 
 ```bash
 sed -e "s|\${AWS_ACCOUNT_ID}|${AWS_ACCOUNT_ID}|g" -e "s|\${REGION}|${REGION}|g" -e "s|\${APIGW_ROLE_ARN}|${APIGW_ROLE_ARN}|g" restapi_for_s3_put_3_template.yaml > restapi_for_s3_put_3_final.yml
