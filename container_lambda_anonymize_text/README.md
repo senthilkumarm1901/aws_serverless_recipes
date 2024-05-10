@@ -163,7 +163,7 @@ APIGW_ROLE_ARN=$(aws iam get-role --role-name $APIGW_ROLE_NAME --query "Role.Arn
 
 ### create a REST API
 ```bash
-API_NAME=REST_API_FOR_SERVERLESS_LLMS
+API_NAME=ANONYMIZE_TEXT
 REST_API_ID=$(aws apigateway create-rest-api --name $API_NAME --region ${REGION} --endpoint-configuration types=REGIONAL --query 'id' --output text) 
 ```
 
@@ -173,7 +173,7 @@ REST_API_ID=$(aws apigateway create-rest-api --name $API_NAME --region ${REGION}
 ```bash
 sed -e "s|\${REST_API_ID\}|${REST_API_ID}|g" -e "s|\${REGION}|${REGION}|g" -e "s|\${FUNCTION_NAME}|${FUNCTION_NAME}|g" -e "s|\${AWS_ACCOUNT_ID}|${AWS_ACCOUNT_ID}|g" lambda_openapi_spec_template.yml > lambda_openapi_spec.yml
 
-aws apigateway put-rest-api --rest-api-id $REST_API_ID --body file://lambda_openapi_spec.yml --mode merge
+aws apigateway put-rest-api --rest-api-id $REST_API_ID --body file://lambda_openapi_spec.yml
 ```
 
 ### Add the Lambda Permission using `put-integration`
