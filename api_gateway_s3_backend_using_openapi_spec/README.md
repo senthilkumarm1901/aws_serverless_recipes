@@ -64,7 +64,7 @@ REST_API_ID=$(aws apigateway create-rest-api --name $API_NAME --region ${your_re
 ```bash
 sed -e "s|\${AWS_ACCOUNT_ID}|${AWS_ACCOUNT_ID}|g" -e "s|\${REGION}|${REGION}|g" -e "s|\${APIGW_ROLE_ARN}|${APIGW_ROLE_ARN}|g" restapi_for_s3_put_3_template.yaml > restapi_for_s3_put_3_final.yml
 
-aws apigateway put-rest-api --rest-api-id $REST_API_ID --body file://restapi_for_s3_put_3_final.yml --mode merge
+aws apigateway put-rest-api --rest-api-id $REST_API_ID --body file://restapi_for_s3_put_3_final.yml
 
 STAGE_NAME=v1
 aws apigateway create-deployment --rest-api-id $REST_API_ID --stage-name $STAGE_NAME --region $REGION
