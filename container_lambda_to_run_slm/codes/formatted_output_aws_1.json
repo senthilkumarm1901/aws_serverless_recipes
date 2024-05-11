@@ -1,0 +1,4 @@
+{
+  "statusCode": 200,
+  "body": "{\"id\": \"cmpl-c7fab299-8554-41ae-8888-c06cad99df60\", \"object\": \"text_completion\", \"created\": 1715430282, \"model\": \"./model/Phi-3-mini-4k-instruct-q4.gguf\", \"choices\": [{\"text\": \"<|user|>\\nWhat is the capital of India?<|end|>\\n<|assistant|> The capital of India is New Delhi. It serves as the seat of all three branches of the Indian government, including the executive, legislative, and judiciary. Additionally, it's a major center for finance, business, and politics in India. Prior to 1911, when British colonial rule established New Delhi, the capital was Kolkata (formerly Calcutta), but it was moved to accommodate administrative convenience and strategic significance.\", \"index\": 0, \"logprobs\": null, \"finish_reason\": \"stop\"}], \"usage\": {\"prompt_tokens\": 13, \"completion_tokens\": 98, \"total_tokens\": 111}}"
+}

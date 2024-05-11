@@ -1,0 +1,4 @@
+{
+  "statusCode": 200,
+  "body": "{\"id\": \"cmpl-e8e5e64d-27bd-416c-9670-40e2206b036d\", \"object\": \"text_completion\", \"created\": 1715430683, \"model\": \"./model/Phi-3-mini-4k-instruct-q4.gguf\", \"choices\": [{\"text\": \"<|user|>\\nYou are a helpful agent who does Zero Shot Classification on the `Input_Text`\\n Input_Text: `Interstellar move is my favorite`. Classify if `Input_Text` is Positive or Negative. You can answer in one word.<|end|>\\n<|assistant|> Positive\", \"index\": 0, \"logprobs\": null, \"finish_reason\": \"stop\"}], \"usage\": {\"prompt_tokens\": 60, \"completion_tokens\": 2, \"total_tokens\": 62}}"
+}

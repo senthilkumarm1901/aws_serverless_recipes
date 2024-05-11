@@ -1,0 +1,4 @@
+{
+  "statusCode": 200,
+  "body": "{\"main_output\": \" Positive\", \"full_output\": {\"id\": \"cmpl-554fd015-69ed-4df5-9f25-06567db98678\", \"object\": \"text_completion\", \"created\": 1715431836, \"model\": \"./model/Phi-3-mini-4k-instruct-q4.gguf\", \"choices\": [{\"text\": \" Positive\", \"index\": 0, \"logprobs\": null, \"finish_reason\": \"stop\"}], \"usage\": {\"prompt_tokens\": 60, \"completion_tokens\": 2, \"total_tokens\": 62}}}"
+}

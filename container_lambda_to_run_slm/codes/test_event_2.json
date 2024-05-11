@@ -1,0 +1,1 @@
+{"prompt": "You are a helpful agent who does Zero Shot Classification on the `Input_Text`\n Input_Text: `Interstellar move is my favorite`. Classify if `Input_Text` is Positive or Negative. You can answer in one word."}

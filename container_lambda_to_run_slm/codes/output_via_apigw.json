@@ -1,0 +1,1 @@
+{"main_output": " Positive", "full_output": {"id": "cmpl-a1a9d85a-281f-421c-a856-fee2b84f60a4", "object": "text_completion", "created": 1715434220, "model": "./model/Phi-3-mini-4k-instruct-q4.gguf", "choices": [{"text": " Positive", "index": 0, "logprobs": null, "finish_reason": "stop"}], "usage": {"prompt_tokens": 60, "completion_tokens": 2, "total_tokens": 62}}}
