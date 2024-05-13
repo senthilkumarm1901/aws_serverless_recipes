@@ -3,6 +3,8 @@
 
 ![](./docs/images/workflow.png)
 
+![](output_in_pic.png)
+
 Tools Used:
 - AWS CLI
 - SageMaker
