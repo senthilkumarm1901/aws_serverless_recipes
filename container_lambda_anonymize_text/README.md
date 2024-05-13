@@ -1,7 +1,6 @@
 # Steps to create container lambda with api gateway
 
 ![Alt text](container_lambda_with_api_gateway.png)
-[image source](https://tud7.medium.com/aws-deploy-lambda-function-with-docker-image-and-invoke-over-https-ae27b137fffc) 
 
 ## 0. Initial Environment 
 
