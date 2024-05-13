@@ -3,6 +3,8 @@
 
 ![Alt text](container_lambda_with_api_gateway_diag2.png)
 
+![](output_in_pic.png)
+
 ## 0. Initial Environment 
 
 
