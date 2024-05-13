@@ -1,7 +1,7 @@
 
 # Steps to create container lambda with api gateway
 
-![Alt text](container_lambda_with_api_gateway.png)
+![Alt text](container_lambda_with_api_gateway_diag2.png)
 
 ## 0. Initial Environment 
 
