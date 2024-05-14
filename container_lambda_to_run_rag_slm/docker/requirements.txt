@@ -1,0 +1,11 @@
+boto3
+llama-cpp-python
+chromadb
+langchain
+langchain-chroma
+gpt4all
+langchainhub
+langchain-community
+huggingface-hub 
+sentence_transformers 
+BeautifulSoup4
