@@ -14658,8 +14658,8 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><h1 align="center"> Frugal <code>LLM</code>  Applications using <code>Serverless</code> for PoCs</h1></p>
-<h5 align="center">Crafting Open Source LLMs Using Serverless Cloud</h5>
+<p><h2 align="center"> Building Frugal <code>OpenSource LLM</code>  Applications <br><br>using <code>Serverless Cloud</code> </h2></p>
+<h5 align="center">Useful for PoCs and Batch Processing Jobs</h5>
 </div>
 </div>
 </div>
@@ -14674,6 +14674,8 @@ div.jp-OutputPrompt {
 <li>Want to build LLM applications? </li>
 <li>Wondering what is the most cost effective way to learn and build them in cloud?</li>
 </ul>
+<blockquote><p>Think OpenSource LLM. Think Serverless</p>
+</blockquote>
 
 </div>
 </div>
@@ -14686,6 +14688,12 @@ div.jp-OutputPrompt {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 align="center"> Purpose of this Presentation</h2><p>Let us see how the intermingling of 2 concepts - Serverless + Open Source LLMs - help you build demo-able PoC LLM applications, at minimal cost.</p>
+
+<pre><code>#LLMOps
+#MLOps
+#AWSLambda
+#LLMonServerless
+#OpenSourceLLMs</code></pre>
 
 </div>
 </div>
@@ -14714,8 +14722,9 @@ div.jp-OutputPrompt {
 </ul>
 </li>
 <li>2) A Lambda to run a <strong>Small Language Model</strong> like Microsoft's Phi3</li>
-<li>3) A Lambda to invoke <strong>a LLM like Mistral 7B Instruct</strong><ul>
-<li>that is running in  SageMaker Endpoint</li>
+<li>3) A Lambda to run a <strong>RAG</strong> Implementation on a Small Language Model like Phi3 </li>
+<li>4) A Lambda to invoke <strong>a LLM like Mistral 7B Instruct</strong><ul>
+<li>the LLM is running in  SageMaker Endpoint</li>
 </ul>
 </li>
 </ul>
@@ -14765,6 +14774,18 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="50" /></p>
+<h5 align="center"><a href="https://senthilkumarm1901.github.io/aws_serverless_recipes/container_lambda_anonymize_text/">https://senthilkumarm1901.github.io/aws_serverless_recipes/container_lambda_anonymize_text/</a></h5>
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -14791,22 +14812,30 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="../container_lambda_to_run_slm/output_in_pic.png" alt=""></p>
 
-     </div>
 </div>
 </div>
 </div>
-
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="50" /></p>
+<h5 align="center"><a href="https://senthilkumarm1901.github.io/aws_serverless_recipes/container_lambda_to_run_slm/">https://senthilkumarm1901.github.io/aws_serverless_recipes/container_lambda_to_run_slm/</a></h5>
+</div>
+</div>
+</div>
 </div></section></section><section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -14814,13 +14843,201 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 align="center"> 3. Large Language Model </h2><ul>
+<h2 align="center"> 3. Small Language Model with RAG </h2><ul>
+<li>A Lambda to run a RAG Implementation on a Small Language Model like Phi3, that gives better context</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="../container_lambda_to_run_rag_slm/slm_with_rag.png" alt=""></p>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="../container_lambda_to_run_rag_slm/output_in_pic.png" alt=""></p>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="50" /></p>
+<h5 align="center"><a href="https://senthilkumarm1901.github.io/aws_serverless_recipes/container_lambda_to_run_rag_slm/">https://senthilkumarm1901.github.io/aws_serverless_recipes/container_lambda_to_run_rag_slm/</a></h5>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 align="center"> 4. Large Language Model  (A Partial Serverless)</h2><ul>
 <li>A Lambda to invoke <strong>a LLM like Mistral 7B Instruct</strong><ul>
 <li>that is running in  SageMaker Endpoint</li>
 </ul>
 </li>
 </ul>
 
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="../lambda_to_invoke_a_sagemaker_endpoint/lambda_to_invoke_sagemaker_endpoint.png" alt=""></p>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="../lambda_to_invoke_a_sagemaker_endpoint/output_in_pic.png" alt=""></p>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="50" /></p>
+<h5 align="center"><a href="https://senthilkumarm1901.github.io/aws_serverless_recipes/lambda_to_invoke_a_sagemaker_endpoint/">https://senthilkumarm1901.github.io/aws_serverless_recipes/lambda_to_invoke_a_sagemaker_endpoint/</a></h5>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 align="center"> What knowledge you gain by this way of practice?</h2>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>MLOps Concepts</strong>:</p>
+<ul>
+<li>Dockerizing ML Applications. What works in your machine works everywhere. More than 70% of the time building these LLM Apps is in perfecting the dockerfile. </li>
+<li>The art of storing ML Models in AWS Lambda Containers. Use <code>cache_dir</code> well. Otherwise, models get downloaded everytime docker container is created</li>
+</ul>
+<div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;HF_HOME&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;/tmp/model&#39;</span> <span class="c1">#the only `write-able` dir in AWS lambda = `/tmp`</span>
+<span class="o">...</span>
+<span class="o">...</span>
+<span class="n">your_model</span><span class="o">=</span><span class="s2">&quot;ab-ai/pii_model&quot;</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">your_model</span><span class="p">,</span><span class="n">cache_dir</span><span class="o">=</span><span class="s1">&#39;/tmp/model&#39;</span><span class="p">)</span>
+<span class="n">ner_model</span> <span class="o">=</span> <span class="n">AutoModelForTokenClassification</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">your_model</span><span class="p">,</span><span class="n">cache_dir</span><span class="o">=</span><span class="s1">&#39;/tmp/model&#39;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>AWS Concepts</strong>:</p>
+<ul>
+<li><code>aws cli</code> is NOT your enemy. It is your friend for shorterning deployments, especially for Serverless</li>
+<li>API Gateway is a frustratingly beautiful service. But a combination of <code>aws cli</code> and <code>OpenAPI</code> spec makes it replicable</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Finally, the <strong>LLM Universe</strong>:</p>
+<ul>
+<li>Frameworks: Llama cpp, LangChain, Huggingface (there are so many I have not used)</li>
+<li>SLMs work well with Reasoning but are too slow/bad for general knowledge questions</li>
+</ul>
+<blockquote><p>Well, it is difficult to keep up with these frameworks. I flick codes. Models are like wines and these frameworks are like bottles. Getting used to how the wines are stored in bottles help.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Next Steps</strong>:</p>
+<ul>
+<li>The frustrating art of flicking codes from github. Kidding, <ul>
+<li>Replicate the instructions in the attached Github links<ul>
+<li>Dockerizing Applications</li>
+<li>Provisioning AWS Resources like AWS Lambda, API Gateway</li>
+</ul>
+</li>
+<li>Explore various other avenues of using LLMs (especially the paid ones). Paid APIs are cake-walk compared to this. But won't give you the depth in implementations</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 align="center"> Thank You</h2>
 </div>
 </div>
 </div>
