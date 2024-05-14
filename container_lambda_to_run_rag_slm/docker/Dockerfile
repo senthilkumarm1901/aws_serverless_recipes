@@ -39,6 +39,7 @@ COPY codes/lambda_function.py ${LAMBDA_TASK_ROOT}
 
 CMD [ "lambda_function.handler" ]
 
+### NOT IMPLEMENTED IN CLOUD because of arm64 arch #### 
 # sudo docker buildx build --platform linux/arm64 -f Dockerfile . -t rag_llm_on_lambda:13May
 
 # to start the container locally
@@ -53,3 +54,8 @@ CMD [ "lambda_function.handler" ]
 
 # to experiment locally in docker
 # docker run --rm -ti --entrypoint /bin/bash --platform linux/arm64 rag_llm_on_lambda:13May
+
+### NOT IMPLEMENTED IN CLOUD because of arm64 arch #### 
+
+# package mismatch in `arm64` architecture made us switch to `x86_64` like below
+# sudo docker buildx build --platform linux/arm64 -f Dockerfile . -t rag_llm_on_lambda_amd:14May 
