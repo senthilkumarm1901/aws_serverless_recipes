@@ -14985,6 +14985,22 @@ Own Cloud hosted LLM vs Serverless Pay-as-you-go LLM APIs <br></p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 align="center"> Key Challenges Faced</h2><ul>
+<li>Serverless could mean we end up with low end cpu architecture. Hence, latency high for RAG LLM implementations</li>
+<li>RAG could mean any big context. But converting the RAG context into a vector store will take time. Hence size of the context needs to be lower for "AWS Lambda" implementations</li>
+<li>API Gateway times out in 30 seconds. Hence could not be used in RAG LLM implementation</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 align="center"> What knowledge you gain by this way of practice?</h2>
 </div>
 </div>
