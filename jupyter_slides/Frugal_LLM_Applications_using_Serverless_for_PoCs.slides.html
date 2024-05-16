@@ -14688,14 +14688,14 @@ Think Serverless</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 align="center"> Debates that we are reserving for a better day!</h2><p>Or probably by end of session:</p>
+<h2 align="center"> Debates that we ARE NOT having today</h2><p>Or probably could have by the end of session:</p>
 <blockquote><p>OpenSource LLMs vs Paid LLMs <br>
 Own Cloud hosted LLM vs Serverless Pay-as-you-go LLM APIs <br></p>
 </blockquote>
 <p>Note:</p>
 <ul>
-<li>These are 2 different debates. </li>
-<li>You can pay to the Serverless Bedrock API and use an Open Source LLM model like <code>Mistral AI Instruct</code>. </li>
+<li>The above are 2 different debates. </li>
+<li>You can pay to use the Serverless AWS Bedrock API and but invoke an Open Source LLM model like <code>Mistral AI Instruct</code>. </li>
 </ul>
 
 </div>
@@ -14726,7 +14726,7 @@ Own Cloud hosted LLM vs Serverless Pay-as-you-go LLM APIs <br></p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 align="center"> What are we going to build?</h2>
+<h2 align="center"> LLM Recipes we are discussing today: </h2>
 </div>
 </div>
 </div>
@@ -14738,12 +14738,51 @@ Own Cloud hosted LLM vs Serverless Pay-as-you-go LLM APIs <br></p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
-<li>1) A Lambda to run inference on a purpose-built ML Model<ul>
+<li>1) A Lambda to run inference on a purpose-built Transformer ML Model<ul>
 <li>A Lambda to <strong>Anonymize Text</strong> using a Huggingface BERT Transformer-based Language Model for PII De-identification </li>
 </ul>
 </li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
 <li>2) A Lambda to run a <strong>Small Language Model</strong> like Microsoft's Phi3</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
 <li>3) A Lambda to run a <strong>RAG</strong> Implementation on a Small Language Model like Phi3 </li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
 <li>4) A Lambda to invoke <strong>a LLM like Mistral 7B Instruct</strong><ul>
 <li>the LLM is running in  SageMaker Endpoint</li>
 </ul>
@@ -14878,7 +14917,78 @@ Own Cloud hosted LLM vs Serverless Pay-as-you-go LLM APIs <br></p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="../container_lambda_to_run_rag_slm/slm_with_rag.png" alt=""></p>
+<p><strong>What is RAG</strong>, <strong>How does RAG improve LLM Accuracy</strong>?</p>
+<blockquote><p>Retrieval augmented generation, or RAG, is an architectural approach that can improve the efficacy of large language model (LLM) applications by leveraging custom data.</p>
+</blockquote>
+<p>Source: <a href="https://www.databricks.com/glossary/retrieval-augmented-generation-rag">Databricks</a></p>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>How does LLM work?</strong></p>
+<p><img src="https://images.ctfassets.net/xjan103pcp94/3TBU5BOctjuaPyxuA8PGul/1c1b0b0129be5fef9eaef73063491582/image1.png" width="500" /></p>
+<p>Source: <a href="https://www.anyscale.com/blog/a-comprehensive-guide-for-building-rag-based-llm-applications-part-1">AnyScale Blog: a-comprehensive-guide-for-building-rag-based-llm-applications</a></p>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>How does RAG in LLM work?</strong></p>
+<p><img src="https://files.realpython.com/media/Screenshot_2023-10-28_at_2.05.18_PM.92b839a5972b.png" width="700" /></p>
+<p>Source: <a href="https://realpython.com/chromadb-vector-database/">RealPython Blog: chromadb-vector-database</a></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>How is a Vector DB created</strong></p>
+<p><img src="how_is_vector_db_created.png" width="700" /></p>
+<p>Source: <a href="https://www.anyscale.com/blog/a-comprehensive-guide-for-building-rag-based-llm-applications-part-1">AnyScale Blog: a-comprehensive-guide-for-building-rag-based-llm-applications</a></p>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Detour: If you wish to use other Vector databases</strong></p>
+<p><img src="https://thedataquarry.com/posts/vector-db-1/vector-db-source-available.png" width="700" /></p>
+<p>Source: <a href="https://thedataquarry.com/posts/vector-db-1/">Data Quarry Blog: Vector databases - What makes each one different?</a></p>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="../container_lambda_to_run_rag_slm/slm_with_rag_3.png" alt=""></p>
 
 </div>
 </div>
@@ -15059,7 +15169,7 @@ Own Cloud hosted LLM vs Serverless Pay-as-you-go LLM APIs <br></p>
 <h2 align="center"> Key Challenges Faced</h2><ul>
 <li>Serverless could mean we end up with low end cpu architecture. Hence, latency high for RAG LLM implementations</li>
 <li>RAG could mean any big context. But converting the RAG context into a vector store will take time. Hence size of the context needs to be lower for "AWS Lambda" implementations</li>
-<li>API Gateway times out in 30 seconds. Hence could not be used in RAG LLM implementation</li>
+<li>Maximum timelimit in Lambda is 30 min. API Gateway times out in 30 seconds. Hence could not be used in RAG LLM implementation</li>
 </ul>
 
 </div>
@@ -15110,6 +15220,39 @@ Own Cloud hosted LLM vs Serverless Pay-as-you-go LLM APIs <br></p>
 <ul>
 <li><code>aws cli</code> is your friend for shorterning deployments, especially for Serverless</li>
 <li>API Gateway is a frustratingly beautiful service. But a combination of <code>aws cli</code> and <code>OpenAPI</code> spec makes it replicable</li>
+<li>AWS Lambda Costing is awesomely cheap for PoCs</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span><span class="c1">## AWS Lambda ARM Architecture Costs (assuming you have used up all your free tier)</span>
+Number of requests: <span class="m">50</span> per day * <span class="o">(</span><span class="m">730</span> hours <span class="k">in</span> a month / <span class="m">24</span> hours <span class="k">in</span> a day<span class="o">)</span> <span class="o">=</span> <span class="m">1520</span>.83 per month
+Amount of memory allocated: <span class="m">10240</span> MB x <span class="m">0</span>.0009765625 GB <span class="k">in</span> a <span class="nv">MB</span> <span class="o">=</span> <span class="m">10</span> GB
+Amount of ephemeral storage allocated: <span class="m">5120</span> MB x <span class="m">0</span>.0009765625 GB <span class="k">in</span> a <span class="nv">MB</span> <span class="o">=</span> <span class="m">5</span> GB
+
+Pricing calculations
+<span class="m">1</span>,520.83 requests x <span class="m">120</span>,000 ms x <span class="m">0</span>.001 ms to sec conversion <span class="nv">factor</span> <span class="o">=</span> <span class="m">182</span>,499.60 total compute <span class="o">(</span>seconds<span class="o">)</span>
+<span class="m">10</span> GB x <span class="m">182</span>,499.60 <span class="nv">seconds</span> <span class="o">=</span> <span class="m">1</span>,824,996.00 total compute <span class="o">(</span>GB-s<span class="o">)</span>
+<span class="m">1</span>,824,996.00 GB-s x <span class="m">0</span>.0000133334 <span class="nv">USD</span> <span class="o">=</span> <span class="m">24</span>.33 USD <span class="o">(</span>monthly compute charges<span class="o">)</span>
+<span class="m">1</span>,520.83 requests x <span class="m">0</span>.0000002 <span class="nv">USD</span> <span class="o">=</span> <span class="m">0</span>.00 USD <span class="o">(</span>monthly request charges<span class="o">)</span>
+<span class="m">5</span> GB - <span class="m">0</span>.5 GB <span class="o">(</span>no additional charge<span class="o">)</span> <span class="o">=</span> <span class="m">4</span>.50 GB billable ephemeral storage per <span class="k">function</span>
+<span class="m">4</span>.50 GB x <span class="m">182</span>,499.60 <span class="nv">seconds</span> <span class="o">=</span> <span class="m">821</span>,248.20 total storage <span class="o">(</span>GB-s<span class="o">)</span>
+<span class="m">821</span>,248.20 GB-s x <span class="m">0</span>.0000000352 <span class="nv">USD</span> <span class="o">=</span> <span class="m">0</span>.0289 USD <span class="o">(</span>monthly ephemeral storage charges<span class="o">)</span>
+<span class="m">24</span>.33 USD + <span class="m">0</span>.0289 <span class="nv">USD</span> <span class="o">=</span> <span class="m">24</span>.36 USD
+
+Lambda costs - Without Free Tier <span class="o">(</span>monthly<span class="o">)</span>: <span class="m">24</span>.36 USD
+</pre></div>
+<ul>
+<li>If I run a <code>c5.large</code> (minimal CPU) EC2 instance running throughout the month, cost = 60 USD</li>
+<li>If I run a <code>g4dn.large</code> (minimal GPU) EC2 instance running throughout the month, cost = 420 USD</li>
 </ul>
 
 </div>
@@ -15124,11 +15267,38 @@ Own Cloud hosted LLM vs Serverless Pay-as-you-go LLM APIs <br></p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Finally, the <strong>LLM Concepts</strong>:</p>
 <ul>
-<li>Frameworks: Llama cpp, LangChain, Huggingface (there are so many I have not used)</li>
+<li>Frameworks: Llama cpp, LangChain, LlamaIndex, Huggingface (and so many more!)</li>
 <li>SLMs work well with Reasoning but are too slow/bad for general knowledge questions</li>
 </ul>
-<blockquote><p>Well, it is difficult to keep up with these frameworks. I flick codes. Models are like wines and these frameworks are like bottles. Getting used to how the wines are stored in bottles help.</p>
+<blockquote><p>Well, it is difficult to keep up with these frameworks. I flick codes. Models are like wines and these frameworks are like bottles. Tthe important thing is the wine more than the bottle. But getting used to how the wines are stored in the bottles help.</p>
 </blockquote>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Next Steps for the author</strong>:</p>
+<ul>
+<li>Codes may not fully effecient! We can further reduce cost if run time is reduced</li>
+</ul>
+<p><br> For Phi3-Mini-RAG:</p>
+<ul>
+<li>Try leveraging a better embedding model (apart from the ancient <code>Sentence Transformers</code>)</li>
+<li>What about other vector databases - like Pinecone Milvus (we have used opensource Chromodb) here</li>
+<li>Rust for LLMs. Rust for Lambda. </li>
+</ul>
+<p>Sources:</p>
+<ul>
+<li>Rust ML Minimalist framework - Candle: <a href="https://github.com/huggingface/candle">https://github.com/huggingface/candle</a></li>
+<li>Rust for LLM - <a href="https://github.com/rustformers/llm">https://github.com/rustformers/llm</a></li>
+<li>Rust for AWS Lambda - <a href="https://www.youtube.com/watch?v=He4inXmMZZI">https://www.youtube.com/watch?v=He4inXmMZZI</a></li>
+</ul>
 
 </div>
 </div>
@@ -15160,7 +15330,8 @@ Own Cloud hosted LLM vs Serverless Pay-as-you-go LLM APIs <br></p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 align="center"> Thank You</h2>
+<p><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="50" /></p>
+<h5 align="center"><a href="https://github.com/senthilkumarm1901/serverless_nlp_app">github.com/senthilkumarm1901/serverless_nlp_app</a></h5><h2 align="center"> Thank You</h2>
 </div>
 </div>
 </div>
