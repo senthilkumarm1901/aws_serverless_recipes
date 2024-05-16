@@ -5,7 +5,7 @@ Main Sources for this recipe:
 
 # Steps to create container lambda with api gateway
 
-![Alt text](./slm_with_rag_2.png)
+![Alt text](./slm_with_rag_3.png)
 
 ## 0. Initial Environment 
 
