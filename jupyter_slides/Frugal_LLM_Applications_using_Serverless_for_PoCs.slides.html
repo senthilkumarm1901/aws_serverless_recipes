@@ -15169,7 +15169,7 @@ Own Cloud hosted LLM vs Serverless Pay-as-you-go LLM APIs <br></p>
 <h2 align="center"> Key Challenges Faced</h2><ul>
 <li>Serverless could mean we end up with low end cpu architecture. Hence, latency high for RAG LLM implementations</li>
 <li>RAG could mean any big context. But converting the RAG context into a vector store will take time. Hence size of the context needs to be lower for "AWS Lambda" implementations</li>
-<li>Maximum timelimit in Lambda is 30 min. API Gateway times out in 30 seconds. Hence could not be used in RAG LLM implementation</li>
+<li>Maximum timelimit in Lambda is 15 min. API Gateway times out in 30 seconds. Hence could not be used in RAG LLM implementation</li>
 </ul>
 
 </div>
@@ -15250,6 +15250,17 @@ Pricing calculations
 
 Lambda costs - Without Free Tier <span class="o">(</span>monthly<span class="o">)</span>: <span class="m">24</span>.36 USD
 </pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <ul>
 <li>If I run a <code>c5.large</code> (minimal CPU) EC2 instance running throughout the month, cost = 60 USD</li>
 <li>If I run a <code>g4dn.large</code> (minimal GPU) EC2 instance running throughout the month, cost = 420 USD</li>
@@ -15270,7 +15281,7 @@ Lambda costs - Without Free Tier <span class="o">(</span>monthly<span class="o">
 <li>Frameworks: Llama cpp, LangChain, LlamaIndex, Huggingface (and so many more!)</li>
 <li>SLMs work well with Reasoning but are too slow/bad for general knowledge questions</li>
 </ul>
-<blockquote><p>Well, it is difficult to keep up with these frameworks. I flick codes. Models are like wines and these frameworks are like bottles. Tthe important thing is the wine more than the bottle. But getting used to how the wines are stored in the bottles help.</p>
+<blockquote><p>Models are like wines and these LLM frameworks are like bottles. The important thing is the wine more than the bottle. But getting used to how the wines are stored in the bottles help.</p>
 </blockquote>
 
 </div>
@@ -15285,13 +15296,13 @@ Lambda costs - Without Free Tier <span class="o">(</span>monthly<span class="o">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>Next Steps for the author</strong>:</p>
 <ul>
-<li>Codes may not fully effecient! We can further reduce cost if run time is reduced</li>
+<li>Codes here may not be fully efficient! We can further reduce cost if run time is reduced</li>
 </ul>
 <p><br> For Phi3-Mini-RAG:</p>
 <ul>
 <li>Try leveraging a better embedding model (apart from the ancient <code>Sentence Transformers</code>)</li>
-<li>What about other vector databases - like Pinecone Milvus (we have used opensource Chromodb) here</li>
-<li>Rust for LLMs. Rust for Lambda. </li>
+<li>What about other vector databases? - Like Pinecone Milvus (we have used opensource Chromodb) here</li>
+<li>Idea to explore: Rust for LLMs. Rust for Lambda. </li>
 </ul>
 <p>Sources:</p>
 <ul>
@@ -15317,7 +15328,7 @@ Lambda costs - Without Free Tier <span class="o">(</span>monthly<span class="o">
 <li>Provisioning AWS Resources like AWS Lambda, API Gateway using tools like <code>aws cli</code> and <code>OpenAPI</code></li>
 </ul>
 </li>
-<li>Explore various other avenues of using LLMs (especially the paid ones). Paid APIs are cake-walk compared to this. But won't give you the depth in implementations</li>
+<li>Explore various other avenues of using LLMs (especially the paid ones). Paid APIs are cakewalk compared to this. But won't give you the depth in implementations</li>
 </ul>
 
 </div>
