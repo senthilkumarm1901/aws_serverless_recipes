@@ -1,3 +1,4 @@
-- I had created this Lambda Recipe with the help of Github CoPilot
+I had created this **Lambda Endpoint with a Custom Token Authorizer** Recipe with the help of Github CoPilot
+
 - My interactions with CoPilot are in [copilot_interactions.md](./copilot_interactions.md)
 - The commands that were run are there in [sam_commands.bash](./sam_commands.bash)
