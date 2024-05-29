@@ -1,0 +1,88 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: An AWS Serverless Specification template describing your function.
+Resources:
+  SimpleRegexLambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - lambda.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Policies:
+        - PolicyName: SimpleRegexLambdaPolicy
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - logs:CreateLogGroup
+                  - logs:CreateLogStream
+                  - logs:PutLogEvents
+                Resource: '*'
+
+  SimpleRegexLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: simple_regex_lambda
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.8
+      MemorySize: 256
+      Timeout: 30
+      Architectures: 
+        - arm64
+      Role: !GetAtt SimpleRegexLambdaRole.Arn
+
+  SimpleRegexLambdaInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !GetAtt SimpleRegexLambda.Arn
+      Action: lambda:InvokeFunction
+      Principal: apigateway.amazonaws.com
+
+  SimpleRegexApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Prod
+      Auth:
+        DefaultAuthorizer: SimpleRegexLambdaAuthorizer
+        Authorizers:
+          SimpleRegexLambdaAuthorizer:
+            FunctionArn: !GetAtt SimpleRegexLambdaAuthorizer.Arn
+      DefinitionBody:
+        swagger: '2.0'
+        info:
+          title: SimpleRegexApi
+        paths:
+          /simple_regex_lambda:
+            post:
+              x-amazon-apigateway-integration:
+                httpMethod: POST
+                type: aws_proxy
+                uri: 
+                  Fn::Sub: arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${SimpleRegexLambda.Arn}/invocations
+                passthroughBehavior: "when_no_match"
+                requestTemplates:
+                  application/json: "{ \"body\" : $input.json('$') }"
+
+  SimpleRegexLambdaAuthorizer:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: simple_regex_lambda_authorizer
+      Handler: authorizer_handler.lambda_handler
+      Runtime: python3.8
+      MemorySize: 128
+      Timeout: 3
+      Architectures: 
+        - arm64
+      Role: !GetAtt SimpleRegexLambdaRole.Arn
+
+Outputs:
+  SimpleRegexApi:
+    Description: "API Gateway endpoint URL for Prod environment"
+    Value: !Sub "https://${SimpleRegexApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/simple_regex_lambda/"

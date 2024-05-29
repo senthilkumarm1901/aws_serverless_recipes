@@ -1,0 +1,4 @@
+{
+    "text": "Hello, my name is Senthil Kumar. I work as a software engineer at XYZ. my email id is senthil_kumar@gmail.com. Reach me at mobile +91 9876541230",
+    "regex_pattern": "(\\w+)[-_.]?(\\w+)@((\\w|-)+)\\.\\w+"
+}
